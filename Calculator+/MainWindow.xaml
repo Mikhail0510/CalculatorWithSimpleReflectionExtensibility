@@ -1,0 +1,65 @@
+﻿<Window x:Class="Calculator_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator_"
+        mc:Ignorable="d"
+        Title="Calculator+" Height="497" Width="540">
+    <Grid Height="474" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="721*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="CurrentNumber" Margin="10,10,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="20" Background="#FFDFD6D6" Height="66" VerticalContentAlignment="Bottom"/>
+        <StackPanel Margin="21,81,0,0" Height="260" HorizontalAlignment="Left" Width="212" VerticalAlignment="Top" Grid.Column="1">
+            <DockPanel LastChildFill="False" Height="65" Width="170" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Button Content="1" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushOneDigit"/>
+                <Button Content="2" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushTwoDigit"/>
+                <Button Content="3" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushThreeDigit"/>
+            </DockPanel>
+            <DockPanel LastChildFill="False" Height="65" Width="170">
+                <Button Content="4" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushFourDigit"/>
+                <Button Content="5" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushFiveDigit"/>
+                <Button Content="6" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushSixDigit"/>
+            </DockPanel>
+            <DockPanel LastChildFill="False" Height="65" Width="170">
+                <Button Content="7" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushSevenDigit"/>
+                <Button Content="8" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushEightDigit"/>
+                <Button Content="9" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushNineDigit"/>
+            </DockPanel>
+            <DockPanel LastChildFill="False" Height="65" Width="170">
+                <Button Content="0" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushZeroDigit"/>
+                <Button Content="." FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="PushDot"/>
+                <Button Content="=" FontSize="20" Width="51" Height="51" Margin="2,2,2,2" Click="ExaluateExpression"/>
+            </DockPanel>
+        </StackPanel>
+        <DockPanel LastChildFill="False" Margin="13,86,0,0" Height="338" Width="61" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button Content="+" FontSize="20" Width="51" DockPanel.Dock="Top" Margin="2,2,2,2" Height="51" Click="PushPlus"/>
+            <Button Content="-" FontSize="20" Width="51" DockPanel.Dock="Top" Margin="2,2,2,2" Height="51" VerticalAlignment="Top" Click="PushMinus"/>
+            <Button Content="*" FontSize="20" Width="51" DockPanel.Dock="Top" Margin="2,2,2,2" Height="51" VerticalAlignment="Top" Click="PushMiltiply"/>
+            <Button Content="/" FontSize="20" Width="51" DockPanel.Dock="Top" Margin="2,2,2,2" Height="51" VerticalAlignment="Top" Click="PushDivider"/>
+            <Button Content="C" FontSize="20" DockPanel.Dock="Top" Height="51" Width="51" VerticalAlignment="Top" Margin="2,2,2,2" Click="ClearString"/>
+            <Button Content="←" FontSize="20" DockPanel.Dock="Top" Height="51" Width="51" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="2,2,2,2" Click="RemoveLastChar"/>
+        </DockPanel>
+        <Grid Name="ExtensionPanel" Grid.Column="1" Margin="224,86,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Label Name="ExpressionString"  Content="" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2" Height="33"/>
+
+    </Grid>
+</Window>
